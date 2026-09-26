@@ -1,0 +1,108 @@
+Third-party notices
+===================
+
+This package is released under Apache-2.0. It bundles no third-party data. It
+reads, or can be pointed at, the resources listed below; each keeps its own terms
+and its own access route, and none of them is redistributed here.
+
+Auxiliary public resources
+--------------------------
+
+OptimusKG
+  Version: Harvard Dataverse deposit doi:10.7910/DVN/IYNGEV.
+  Access route: public repository and Dataverse deposit, no account required.
+  Licence: MIT for the code, CC BY-NC-SA 4.0 for the data.
+  Source: https://github.com/mims-harvard/OptimusKG
+  Role: substrate for the knowledge-graph path retrieval agent. Only the schema,
+        node kinds, relation types and release-date semantics are mirrored here.
+
+Hetionet
+  Version: v1.0. Access route: direct download. Licence: CC0 1.0.
+  Source: https://github.com/hetio/hetionet
+  Role: cross-validation of substrate generalisation.
+
+Human-GEM
+  Version: v2.0.1. Access route: public repository release. Licence: CC-BY 4.0.
+  Source: https://github.com/SysBioChalmers/Human-GEM/releases/tag/v2.0.1
+  Role: source of the metabolic reaction edges and of the context-specific flux
+        model. The release ships a reduced reconstruction of the named pathways
+        plus a reader for the released JSON export.
+
+Reactome
+  Access route: public download. Licence: CC0.
+  Source: https://reactome.org/download-data
+  Role: pathway membership edges.
+
+KEGG
+  Access route: public pathway database. Licence: academic use; no commercial
+  reuse terms are granted by the provider.
+  Source: https://www.genome.jp/kegg/pathway.html
+  Role: colorectal cancer pathway map and pathway-to-disease context.
+
+DepMap
+  Version: DepMap Public 26Q1, released 2026-04-01.
+  Access route: public portal download, no account required.
+  Licence: CC-BY 4.0 under the DepMap terms.
+  Source: https://depmap.org/portal/data_page/?tab=allData
+  Role: CRISPR Chronos gene-effect scores and the CCLE metabolomics table.
+
+GDSC
+  Version: Release 8.4. Access route: public FTP. Licence: CC-BY 4.0 under the
+  Sanger standard terms.
+  Source: https://ftp.sanger.ac.uk/pub/project/cancerrxgene/releases/
+  Role: drug sensitivity.
+
+PRISM Repositioning
+  Access route: DepMap portal download. Licence: CC-BY 4.0.
+  Source: https://depmap.org/repurposing/
+  Role: drug response.
+
+LINCS L1000 Connectivity Map
+  Version: CMap 2020 Level 5. Access route: public portal. Licence: CC0.
+  Source: https://clue.io/data/CMap2020
+  Role: transcriptional response signatures.
+
+GDC
+  Version: GDC Data Release 46, projects TCGA-COAD and TCGA-READ.
+  Access route: open public tier; raw sequence reads under dbGaP phs000178.
+  Licence: GDC open-tier terms.
+  Source: https://portal.gdc.cancer.gov
+  Role: colorectal adenocarcinoma expression and clinical export.
+
+cBioPortal
+  Study: coadread_tcga_pan_can_atlas_2018.
+  Access route: public instance. Licence: cBioPortal public-instance terms.
+  Source: https://www.cbioportal.org/study/summary?id=coadread_tcga_pan_can_atlas_2018
+  Role: cross-cohort expression context.
+
+GEO
+  Series: GSE35452, GSE45404, GSE68204, GSE119409, GSE150082.
+  Access route: public deposit. Licence: GEO public-deposit terms.
+  Source: https://www.ncbi.nlm.nih.gov/geo/
+  Role: pretreatment-biopsy expression with pathological response.
+
+EBI MetaboLights
+  Access route: public portal. Licence: EMBL-EBI terms of use.
+  Source: https://www.ebi.ac.uk/metabolights/
+  Role: open metabolomics route.
+
+Human Metabolome Database
+  Version: HMDB 5.0. Access route: browser only; the portal returns HTTP 403 to
+  automated access as checked on 2026-09-17.
+  Licence: free for academic use.
+  Source: https://hmdb.ca
+  Role: cited bibliographically for metabolite identity only; not accessed
+        programmatically by this package.
+
+Gated and private resources
+---------------------------
+
+The retrospective and prospective clinical arms are held at their institutions
+under their own data-use agreements and are never redistributed. The in vitro
+cell-line corroboration is laboratory work and is not part of this package.
+
+Python dependencies
+-------------------
+
+numpy (BSD-3-Clause), scipy (BSD-3-Clause), pandas (BSD-3-Clause),
+scikit-learn (BSD-3-Clause), PyYAML (MIT), torch (BSD-3-Clause), pytest (MIT).

@@ -1,0 +1,103 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crb-concordance"
+version = "0.1.0"
+description = "Belief-function concordance discovery of metabolic vulnerabilities in radioresistant colorectal cancer"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+dependencies = [
+  "numpy==2.4.3",
+  "PyYAML==6.0.3",
+  "scikit-learn==1.8.0",
+  "scipy==1.17.1",
+  "torch==2.11.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.0.3", "ruff==0.15.13", "mypy==2.1.0", "black==25.9.0", "isort==6.1.0"]
+
+[project.scripts]
+crb-calibrate = "crb_concordance.cli.calibrate:main"
+crb-discover = "crb_concordance.cli.discover:main"
+crb-simulate = "crb_concordance.cli.simulate:main"
+crb-benchmark = "crb_concordance.cli.benchmark:main"
+crb-ablate = "crb_concordance.cli.ablate:main"
+crb-size-prospective = "crb_concordance.cli.size_prospective:main"
+crb-verify = "crb_concordance.cli.verify:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RET", "ARG"]
+ignore = [
+  "E501",
+  "B905",
+  "RET504",
+  "ARG002",
+  "ARG005",
+  "SIM108",
+  "RET503",
+  # str-mixin enums keep JSON serialisation and pattern matching working on 3.11
+  "UP042",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# A test may request a fixture it does not read, and a bare expression is how a
+# property's raise is asserted.
+"tests/*" = ["ARG001", "ARG002", "B018"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
+disable_error_code = [
+  "import-untyped",
+  "no-any-return",
+  "arg-type",
+  "return-value",
+  "attr-defined",
+  "name-defined",
+  "assignment",
+  "redundant-cast",
+  "index",
+  "operator",
+  "call-overload",
+  "unused-ignore",
+  "type-arg",
+  "misc",
+  "var-annotated",
+  "union-attr",
+  "dict-item",
+  "list-item",
+  "truthy-function",
+  "no-untyped-call",
+  "typeddict-item",
+  "typeddict-unknown-key",
+  "valid-type",
+  "empty-body",
+  "abstract",
+  "override",
+]
+exclude = "tests"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning", "ignore::UserWarning"]

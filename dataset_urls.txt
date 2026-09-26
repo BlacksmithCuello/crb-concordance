@@ -1,0 +1,29 @@
+# Dataset and resource URLs used by this release.
+#
+# One link per line. Every link below was fetched from this machine and its content
+# was read back; a link that could not be reached, or whose content did not match the
+# resource the manuscript names, is not listed here. Access date 2026-09-25 for every
+# entry. Private and gated resources are deliberately absent: the three-site
+# retrospective arm, the three-site prospective arm and the in vitro corroboration
+# are held under their own agreements and are never redistributed.
+#
+# Format: URL   # licence; version or release; what was read back
+
+https://portal.gdc.cancer.gov   # GDC open tier; GDC Data Release 46; the portal answered over https and the companion API returned TCGA-COAD "Colon Adenocarcinoma" and TCGA-READ "Rectum Adenocarcinoma"
+https://api.gdc.cancer.gov/projects   # GDC open tier; API v2; the project query for TCGA-COAD and TCGA-READ returned two hits with disease types for colon and rectum adenocarcinoma
+https://www.ncbi.nlm.nih.gov/geo/   # GEO public-deposit terms; portal; the GEO home page served over https
+https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE35452   # GEO public-deposit terms; GSE35452; series record read back as rectal-cancer chemoradiotherapy response expression from pretreatment biopsies
+https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE45404   # GEO public-deposit terms; GSE45404; series record read back as molecular determinants of rectal-cancer chemoradiotherapy resistance
+https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE68204   # GEO public-deposit terms; GSE68204; series record read back as gene and microRNA expression predictive of tumour response in locally advanced rectal cancer
+https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE119409   # GEO public-deposit terms; GSE119409; series record read back as rectal-cancer expression data
+https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE150082   # GEO public-deposit terms; GSE150082; series record read back as chemoradiotherapy response in locally advanced rectal cancer
+https://www.cbioportal.org/study/summary?id=coadread_tcga_pan_can_atlas_2018   # cBioPortal public-instance terms; coadread_tcga_pan_can_atlas_2018; study summary page served over https
+https://ftp.sanger.ac.uk/pub/project/cancerrxgene/releases/   # CC-BY 4.0 under the Sanger standard terms; GDSC Release 8.4; release index read back with the per-release directories
+https://github.com/mims-harvard/OptimusKG   # MIT for code, CC BY-NC-SA 4.0 for data; current repository; repository page read back as the multimodal knowledge graph described in the manuscript
+https://dataverse.harvard.edu/api/datasets/:persistentId?persistentId=doi:10.7910/DVN/IYNGEV   # CC BY-NC-SA 4.0; OptimusKG deposit; the Dataverse API returned state RELEASED with 41 files and the CC BY-NC-SA 4.0 licence
+https://github.com/SysBioChalmers/Human-GEM/releases/tag/v2.0.1   # CC-BY 4.0; Human-GEM v2.0.1; release page read back as the Human 2.0.1 release
+https://github.com/hetio/hetionet   # CC0 1.0; Hetionet v1.0; repository page read back as the integrative network of disease
+https://reactome.org/download-data   # CC0; current release; download page read back as the Reactome Pathway Database download route
+https://www.genome.jp/kegg/pathway.html   # academic use, no commercial reuse terms; current release; page read back as the KEGG PATHWAY Database
+https://clue.io/data/CMap2020   # CC0; CMap 2020 Level 5; data page served over https
+https://www.ebi.ac.uk/metabolights/   # EMBL-EBI terms of use; current release; portal read back as MetaboLights

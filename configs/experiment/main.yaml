@@ -1,0 +1,17 @@
+# The one study the manuscript reports as carried out: the in silico simulation.
+# Supplementary Table S1 fixes every value below.
+name: main
+description: in silico simulation of the conflict distribution and the concordance contrast
+data: evidence_sources
+model: belief_combination
+train: calibration_fit
+study: simulation
+simulation:
+  seeds: 20
+  candidates_per_seed: 2000
+  prevalence: 0.15
+  conflict_probability_grid: [0.1, 0.3, 0.5]
+  absent_evidence_fraction_grid: [0.0, 0.25, 0.5]
+  seed_level_bootstrap_resamples: 5000
+  recall_cutoff: 10
+  parity_margin: 0.15

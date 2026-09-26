@@ -1,0 +1,9 @@
+name: ablation_per_modality_removal
+description: each modality is removed in turn, following the rest of the methodology
+data: evidence_sources
+model: belief_combination
+train: calibration_fit
+study: ablation
+ablation:
+  level: per-modality-removal
+  removed_modalities: [KG, DEP, FLUX, CLIN]

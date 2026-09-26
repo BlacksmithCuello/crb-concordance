@@ -1,0 +1,10 @@
+name: supplementary_reader_study
+description: reader panel and shared-case minimum for the team-arm gain analysis
+data: evidence_sources
+model: belief_combination
+train: calibration_fit
+study: reader
+reader:
+  min_readers: 8
+  min_shared_cases: 155
+  cluster_bootstrap_resamples: 2000

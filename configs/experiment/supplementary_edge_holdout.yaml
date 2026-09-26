@@ -1,0 +1,10 @@
+name: supplementary_edge_holdout
+description: the edge-holding scenario that removes the direct candidate-to-phenotype edge
+data: evidence_sources
+model: belief_combination
+train: calibration_fit
+study: benchmark
+benchmark:
+  edge_holding: true
+  folds: 5
+  cutoffs: [10]

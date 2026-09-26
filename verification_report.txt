@@ -1,0 +1,28 @@
+Verification summary
+====================
+
+overall
+-------
+PARTIALLY_VERIFIED
+
+status_counts
+-------------
+BLOCKED = 0
+FAIL = 1
+NOT_RUN = 0
+PASS = 87
+
+unresolved_claims
+-----------------
+
+outstanding_checks
+------------------
+- falsification_inequality_at_declared_cutoff
+
+hygiene
+-------
+effective_lines = 15219
+markdown_files:
+  - README.md
+modules = 99
+privacy_offenders:

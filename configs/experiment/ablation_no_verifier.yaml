@@ -1,0 +1,9 @@
+name: ablation_no_verifier
+description: the four masses are merged without the conflict-redistributing rule
+data: evidence_sources
+model: belief_combination
+train: calibration_fit
+study: ablation
+ablation:
+  level: no-verifier
+  rule: naive-average

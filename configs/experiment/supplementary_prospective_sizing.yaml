@@ -1,0 +1,15 @@
+name: supplementary_prospective_sizing
+description: Hanley-McNeil sizing of the prospective arm over the correlation assumptions
+data: evidence_sources
+model: belief_combination
+train: calibration_fit
+study: sizing
+sizing:
+  baseline_auroc: 0.70
+  margin: 0.081
+  prevalence: 0.25
+  alpha: 0.05
+  power: 0.80
+  correlations: [0.3, 0.4, 0.5]
+  declared_targets: [690, 600, 500]
+  accrual_range: [750, 900]

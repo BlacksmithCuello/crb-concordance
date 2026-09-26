@@ -1,0 +1,482 @@
+{
+  "claims": [
+    {
+      "claim_id": "C1",
+      "code_paths": [
+        "src/crb_concordance/belief/mass.py"
+      ],
+      "paper_location": "Sec. 4.1, Eq. (1)",
+      "statement": "Every modality reports a mass function on Theta_g = {V, not V} with m(V) + m(not V) + m(Theta_g) = 1",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C2",
+      "code_paths": [
+        "src/crb_concordance/belief/discount.py"
+      ],
+      "paper_location": "Sec. 4.1, Eq. (2)",
+      "statement": "Shafer discounting scales the committed mass by alpha_k and sends the shortfall to Theta_g",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C3",
+      "code_paths": [
+        "src/crb_concordance/belief/combine.py"
+      ],
+      "paper_location": "Sec. 4.2, Algorithm 2; Eq. (3)",
+      "statement": "The sequential combination redistributes the step conflict K_step into m(Theta_g) and never renormalises it away",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C4",
+      "code_paths": [
+        "src/crb_concordance/belief/mass.py"
+      ],
+      "paper_location": "Sec. 4.1, Eq. (4)",
+      "statement": "Bel(V) = m(V), Pl(V) = m(V) + m(Theta_g) and BetP(V) = m(V) + m(Theta_g)/2",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C5",
+      "code_paths": [
+        "src/crb_concordance/discovery/pipeline.py"
+      ],
+      "paper_location": "Sec. 4.2, Algorithm 1",
+      "statement": "The discovery pass collects the four evidences, discounts, combines, appends the ledger rows and returns the pool sorted by BetP(V) descending",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C6",
+      "code_paths": [
+        "src/crb_concordance/agents/verifier.py",
+        "src/crb_concordance/agents/mapping.py"
+      ],
+      "paper_location": "Sec. 4.2, Algorithm 3",
+      "statement": "Discovery-time scoring uses the fixed calibrated mapping and rates and updates no parameter",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C7",
+      "code_paths": [
+        "src/crb_concordance/belief/guarantees.py"
+      ],
+      "paper_location": "Sec. 4.1, Proposition 1",
+      "statement": "The belief-plausibility width increases with the accumulated conflict while the pre-aggregation ignorance masses stay fixed",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C8",
+      "code_paths": [
+        "src/crb_concordance/belief/guarantees.py"
+      ],
+      "paper_location": "Sec. 4.1, Proposition 2",
+      "statement": "Under conditional independence the pignistic estimate converges up to the fixed-discount floor half of the product of the knowledge gaps",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C9",
+      "code_paths": [
+        "src/crb_concordance/calibration/discount_fit.py",
+        "src/crb_concordance/cohorts/control_panel.py"
+      ],
+      "paper_location": "Sec. 4.1, fitting of {alpha_k}",
+      "statement": "The discount rates are fitted on the retrospective control panel built from GLUT1/SLC2A1, MCT1/SLC16A1, SLC16A9, CPT1A and CES1 and are never recalibrated during discovery",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C10",
+      "code_paths": [
+        "src/crb_concordance/calibration/folds.py"
+      ],
+      "paper_location": "Sec. 4.1, four-fold calibration panel",
+      "statement": "Each fold uses the calibration controls and withholds one of them, so the withheld control's recall is computed from rates calibrated without it",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C11",
+      "code_paths": [
+        "src/crb_concordance/discovery/ledger.py",
+        "src/crb_concordance/metrics/provenance.py"
+      ],
+      "paper_location": "Sec. 4.2, provenance ledger",
+      "statement": "Every agent call is recorded with the agent, candidate, evidence nature, score, mass triple, discount rate, calibration fold, source, version, query and timestamp",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C12",
+      "code_paths": [
+        "src/crb_concordance/agents/kg_path.py",
+        "src/crb_concordance/graph/paths.py"
+      ],
+      "paper_location": "Sec. 4.2 item (1); Sec. 4.4",
+      "statement": "The knowledge-graph agent retrieves multi-hop routes to the phenotype and converts pathway-level support into m_g,KG under a bounded path length",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C13",
+      "code_paths": [
+        "src/crb_concordance/graph/leakage.py"
+      ],
+      "paper_location": "Sec. 4.4, leakage controls",
+      "statement": "The knowledge-cutoff control, the substrate-circularity control and the edge-holding scenario are applied to the retrieval agent",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C14",
+      "code_paths": [
+        "src/crb_concordance/graph/metabolic_edges.py"
+      ],
+      "paper_location": "Sec. 4.3, Human-GEM v2.0.1",
+      "statement": "Metabolic reaction edges are merged into the substrate so that they are structurally new relative to any pretraining graph",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C15",
+      "code_paths": [
+        "src/crb_concordance/agents/flux_feasibility.py",
+        "src/crb_concordance/metabolism/knockout.py"
+      ],
+      "paper_location": "Sec. 4.2 item (3)",
+      "statement": "The flux-feasibility agent derives a context-specific model and measures the feasibility of alternative pathways under suppression of the candidate",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C16",
+      "code_paths": [
+        "src/crb_concordance/agents/transcriptomic_clinical.py"
+      ],
+      "paper_location": "Sec. 4.2 item (4)",
+      "statement": "The transcriptomic-clinical association agent regresses expression against radiotherapy response across the public cohorts",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C17",
+      "code_paths": [
+        "src/crb_concordance/agents/dependency.py"
+      ],
+      "paper_location": "Sec. 4.2 item (2)",
+      "statement": "The dependency agent reads functional-genomic loss of fitness together with dose-response sensitivity",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C18",
+      "code_paths": [
+        "src/crb_concordance/agents/verifier.py"
+      ],
+      "paper_location": "Sec. 4.2 item (5)",
+      "statement": "The critic/verifier performs the discounting, the combination and the structural checks",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C19",
+      "code_paths": [
+        "src/crb_concordance/benchmark/registry.py"
+      ],
+      "paper_location": "Table 1",
+      "statement": "Thirty-seven agent, knowledge-graph and mechanistic-modelling baselines across six families plus two fusion-mechanism controls, with the proposed row",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C20",
+      "code_paths": [
+        "src/crb_concordance/evaluation/reporting.py"
+      ],
+      "paper_location": "Table 2",
+      "statement": "The clinical-signature and standard-of-care comparison stays pending until the clinical arms are analysed",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C21",
+      "code_paths": [
+        "src/crb_concordance/metrics/ranking.py"
+      ],
+      "paper_location": "Sec. 4.4, five metrics",
+      "statement": "Recall@k, precision@k, mean reciprocal rank and the fold-level hit rate recorded per named control",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C22",
+      "code_paths": [
+        "src/crb_concordance/metrics/calibration.py"
+      ],
+      "paper_location": "Sec. 4.4; Sec. 4.6",
+      "statement": "Expected calibration error and the Brier score are defined identically at discovery time and at clinical time",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C23",
+      "code_paths": [
+        "src/crb_concordance/metrics/provenance.py"
+      ],
+      "paper_location": "Sec. 4.4, provenance and hallucination",
+      "statement": "The provenance-grounding rate and the complementary hallucinated-edge rate are audited against the ledger rather than self-reported",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C24",
+      "code_paths": [
+        "src/crb_concordance/metrics/comparison.py"
+      ],
+      "paper_location": "Sec. 4.6, bootstrap resampling",
+      "statement": "Confidence intervals use 2,000 clinical resamples and 5,000 seed-level resamples",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C25",
+      "code_paths": [
+        "src/crb_concordance/stats/delong.py"
+      ],
+      "paper_location": "Sec. 4.6, DeLong",
+      "statement": "The difference between two correlated ROC curves on the same cohort is assessed by DeLong's method",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C26",
+      "code_paths": [
+        "src/crb_concordance/metrics/comparison.py",
+        "src/crb_concordance/stats/survival.py"
+      ],
+      "paper_location": "Sec. 4.6, cross-site consistency",
+      "statement": "Cochran's Q with the I-squared statistic flags heterogeneity above fifty percent and the inter-site gap is flagged above ten percentage points",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C27",
+      "code_paths": [
+        "src/crb_concordance/stats/multiplicity.py"
+      ],
+      "paper_location": "Sec. 4.6, multiplicity",
+      "statement": "Holm-Bonferroni controls the primary family and Benjamini-Hochberg the exploratory battery",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C28",
+      "code_paths": [
+        "src/crb_concordance/stats/survival.py"
+      ],
+      "paper_location": "Sec. 4.6, time-to-event",
+      "statement": "Cox models are stratified by site with competing-risk handling for local recurrence",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C29",
+      "code_paths": [
+        "src/crb_concordance/stats/gee.py",
+        "src/crb_concordance/metrics/comparison.py"
+      ],
+      "paper_location": "Sec. 4.6, reader study",
+      "statement": "The reader-study arm gain uses a marginal logistic model with reader as a random effect and a reader-level cluster bootstrap as a cross-check",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C30",
+      "code_paths": [
+        "src/crb_concordance/stats/power.py"
+      ],
+      "paper_location": "Sec. 4.6, prospective sizing",
+      "statement": "The prospective arm is sized by a Hanley-McNeil calculation for two correlated AUROC curves with the sensitivity to the assumed correlation reported explicitly",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C31",
+      "code_paths": [
+        "src/crb_concordance/simulation/design.py"
+      ],
+      "paper_location": "Supplementary Table S1",
+      "statement": "Twenty simulation seeds, two thousand candidates per seed, fifteen percent prevalence, the conflict and absent-evidence grids and 5,000 seed-level resamples",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C32",
+      "code_paths": [
+        "src/crb_concordance/simulation/contrasts.py"
+      ],
+      "paper_location": "Sec. 4.5, H1 and H2",
+      "statement": "H1 removes the combination rule and H2 suppresses the conflict trace, whose interval-width partial R-squared must collapse",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C33",
+      "code_paths": [
+        "src/crb_concordance/simulation/contrasts.py",
+        "src/crb_concordance/simulation/design.py"
+      ],
+      "paper_location": "Sec. 4.4, falsification inequality",
+      "statement": "The pre-specified margin of fifteen percentage points over the best single-modality baseline is evaluated on seed-level bootstrap intervals",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C34",
+      "code_paths": [
+        "src/crb_concordance/evaluation/ablations.py"
+      ],
+      "paper_location": "Sec. 4.5, ablation plan",
+      "statement": "Four levels of extraction plus a substitution tier replacing the combination rule with Dempster renormalisation, naive summation or averaging and Bayesian log-odds",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C35",
+      "code_paths": [
+        "src/crb_concordance/cohorts/schema.py",
+        "src/crb_concordance/cohorts/generator.py"
+      ],
+      "paper_location": "Sec. 4.6; Data availability",
+      "statement": "Three sites across three regions with the retrospective and prospective accrual targets and the declared exclusion criteria",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C36",
+      "code_paths": [
+        "src/crb_concordance/cohorts/control_panel.py"
+      ],
+      "paper_location": "Sec. 4.1, control panel",
+      "statement": "GLUT1/SLC2A1 and MCT1/SLC16A1 are the positive controls and SLC16A9, CPT1A and CES1 the negative controls, with MCT1 expected to score high without deserving a high rank",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C37",
+      "code_paths": [
+        "src/crb_concordance/belief/mass.py",
+        "src/crb_concordance/utils/types.py"
+      ],
+      "paper_location": "Sec. 4.1, frame",
+      "statement": "The frame is the binary set Theta_g = {V, not V} for every candidate",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C38",
+      "code_paths": [
+        "src/crb_concordance/cohorts/generator.py"
+      ],
+      "paper_location": "Sec. 4.6, design ranges",
+      "statement": "The pCR rate sits in the reported twenty to thirty percent range and the standard-of-care baseline in the reported 0.65 to 0.74 range",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C39",
+      "code_paths": [
+        "src/crb_concordance/cohorts/generator.py"
+      ],
+      "paper_location": "Supplementary Table S1, reader panel",
+      "statement": "The reader study uses at least eight readers on at least one hundred and fifty-five shared cases",
+      "verification": "PASS"
+    },
+    {
+      "claim_id": "C40",
+      "code_paths": [
+        "src/crb_concordance/calibration/mass_calibration.py"
+      ],
+      "paper_location": "Sec. 4.2, calibrated mass map",
+      "statement": "The evidence-to-mass map is a fitted object that is fixed for discovery time",
+      "verification": "PASS"
+    }
+  ],
+  "deviations": [
+    {
+      "departure": "The four evidence agents are shipped as deterministic evidence producers over local resources; no hosted model client is included and the only fitted component is the calibrated mass map.",
+      "justification": "The manuscript's backbones are privately hosted services. Shipping a client would put deployment code and credentials into a peer-review release, and the discovery-time behavior the paper specifies is a fixed mapping from evidence to mass with no parameter update.",
+      "paper_location": "Sec. 4.2, system architecture"
+    },
+    {
+      "departure": "The substrate ships as a schema-compatible construction carrying the declared node kinds, relation types, release-dated edges and the named pathways; the Human-GEM v2.0.1 layer is a reduced reconstruction with a reader for the released JSON export.",
+      "justification": "The OptimusKG data deposit is CC BY-NC-SA 4.0 and is not redistributed by this release. The reduced reconstruction keeps every pathway the manuscript names so the retrieval and leakage controls remain executable.",
+      "paper_location": "Sec. 4.3, auxiliary public layer"
+    },
+    {
+      "departure": "The reduced reconstruction's exchange caps, cytosolic and mitochondrial redox split, shuttle capacity and biomass precursor set are declared engineering defaults.",
+      "justification": "The manuscript reports no medium composition or biomass equation. The values are exposed in configs/data and every model output is labelled as a property of the reduced model rather than as a paper result.",
+      "paper_location": "Sec. 4.3, reconstruction techniques"
+    },
+    {
+      "departure": "The folds are read as four leave-one-out folds over the four calibration controls, with the discrepant positive control SLC16A1 withheld from calibration entirely.",
+      "justification": "The manuscript states that every fold uses three of the controls with the whole negative set, that one positive is never processed, and that the panel is a four-fold panel. Reading it as four leave-one-out folds over four calibration controls is the only reading that satisfies all three statements.",
+      "paper_location": "Sec. 4.1, the four-fold calibration panel"
+    },
+    {
+      "departure": "The conflict-trace flagging threshold is 0.05 and the candidate-gating path length is three hops, both taken from the table's planning values.",
+      "justification": "The table marks both as values to be fixed at implementation and gives these planning values, so they are exposed as configuration defaults rather than invented constants.",
+      "paper_location": "Supplementary Table S1"
+    },
+    {
+      "departure": "Control observations are the declared threshold crossings coded as 0.82 and 0.12 with a declared dispersion of 0.16.",
+      "justification": "The screen reports whether a control crossed each threshold rather than the underlying score. Without a declared dispersion the four controls separate perfectly and every fitted rate saturates at one, which the release reports as a panel property.",
+      "paper_location": "Sec. 4.1, control panel coding"
+    },
+    {
+      "departure": "The fifteen percentage point margin is reported at the declared recall@10 cutoff and again at the first cutoff where the margin is arithmetically reachable.",
+      "justification": "With 2,000 candidates at fifteen percent prevalence the top-ten recall is bounded by 10/300, so the declared inequality cannot hold at the declared cutoff whatever the ranking does. The second measurement makes the claim testable instead of vacuous.",
+      "paper_location": "Sec. 4.4, pre-specified falsification inequality"
+    },
+    {
+      "departure": "Each table row is bound to a declared scoring operator over the same four modalities.",
+      "justification": "The manuscript specifies the rows, families and counts but not their implementations, and states that each row is reimplemented on this paper's own pool. The operators are distinct pipelines, not renamings, and they are declared in the benchmark report.",
+      "paper_location": "Table 1"
+    },
+    {
+      "departure": "The separability figure of 4.76 and the conflict mass of 0.339 are not reproduced; the simulation reports its own statistics instead.",
+      "justification": "The manuscript states neither estimator, neither unit, nor a confidence-interval procedure for these two quantities, and the section that would define them is absent from the supplied document, so any number claimed for them would be invented.",
+      "paper_location": "Abstract"
+    },
+    {
+      "departure": "All cohort-level quantities, the in vitro corroboration and the clinical tables remain NOT_RUN.",
+      "justification": "The retrospective and prospective arms are held at their institutions and are not redistributed. The analysis plan for them is implemented and exercised on synthetic records, which is reported as such.",
+      "paper_location": "Sec. 4.6 and Data availability"
+    }
+  ],
+  "findings": [
+    {
+      "check": "declared_margin_reachability",
+      "implication": "The inequality is reported at the declared cutoff and again at the first cutoff where it is arithmetically reachable, and the reachability bound is verified separately.",
+      "outcome": "With the declared pool of 2,000 candidates at 15% prevalence the top-ten recall is bounded by 10/300 = 0.033, so the pre-specified 15-percentage-point margin cannot be met at the declared cutoff by any ranking."
+    },
+    {
+      "check": "falsification_inequality_at_declared_cutoff",
+      "implication": "The manuscript expects parity with the best unconstrained baseline rather than a discovery-utility advantage, so this measured outcome agrees with its own expectation. It is why this release claims the interval, provenance and conflict axes, and why the inequality is reported as measured instead of being reconciled.",
+      "outcome": "The pre-specified margin is not met at the declared cutoff: measured over the reduced grid the mean parity gap is about 0.014 with an interval whose lower bound is about 0.002. At the first cutoff where the margin becomes reachable the gap stays close to zero, so the concordance ranking matches the best single-modality baseline rather than beating it."
+    },
+    {
+      "check": "ablation_dempster_collapses_interval",
+      "implication": "This is the behaviour the Zadeh argument in the introduction predicts, and it is the measured basis for keeping the conflict-redistributing rule as the default.",
+      "outcome": "Replacing the combination rule with Dempster renormalisation collapses the mean interval width by roughly two orders of magnitude while the total conflict mass rises."
+    },
+    {
+      "check": "discount_rates_in_range",
+      "implication": "Proposition 2 explicitly allows the ignorance floor to vanish when a rate reaches one, so the floor is verified both on the deployed rates and on a grid of rates below one.",
+      "outcome": "On the coded control panel some fitted discount rates saturate at one, because the four calibration controls are nearly separable once the crossings are coded."
+    }
+  ],
+  "hygiene": {
+    "effective_lines": 15219,
+    "markdown_files": [
+      "README.md"
+    ],
+    "modules": 99,
+    "privacy_offenders": []
+  },
+  "not_reproduced": [
+    {
+      "item": "Table 1 and Table 2 outcome cells",
+      "reason": "the values require the cohort arms, which are not redistributed"
+    },
+    {
+      "item": "retrospective and prospective cohort analyses",
+      "reason": "private multi-site cohorts held under institutional agreements"
+    },
+    {
+      "item": "in vitro cell-line corroboration",
+      "reason": "laboratory work outside the scope of a code release"
+    },
+    {
+      "item": "the five pretreatment-biopsy expression analyses",
+      "reason": "the series are public but are not downloaded into this release"
+    },
+    {
+      "item": "abstract separability and conflict-mass figures",
+      "reason": "no estimator is stated in the manuscript for either quantity"
+    }
+  ],
+  "overall": "PASS",
+  "paper": "Knowledge-Graph-Augmented Multi-Agent Systems for Discovering Metabolic Vulnerabilities in Radioresistant Colorectal Cancer",
+  "scope_note": "Every entry maps a stated artefact of the article to the code that carries it and confirms the symbol is present on this tree. The second verification pass executes the pipeline itself; its checks are listed in verification_report.json.",
+  "unresolved_claims": []
+}

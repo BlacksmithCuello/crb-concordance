@@ -1,0 +1,20 @@
+# for unit-test smoke only; do not use for reporting
+name: _smoke
+description: reduced-size configuration used only by the test suite
+data: evidence_sources
+model: belief_combination
+train: calibration_fit
+data_override:
+  cohort_size: 3000
+  prospective_size: 750
+  n_background_genes: 24
+  expression_genes: 12
+model_override:
+  max_hops: 2
+simulation:
+  seeds: 2
+  candidates_per_seed: 120
+  prevalence: 0.15
+  conflict_probability_grid: [0.3]
+  absent_evidence_fraction_grid: [0.0]
+  seed_level_bootstrap_resamples: 200

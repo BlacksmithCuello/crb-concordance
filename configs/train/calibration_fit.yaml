@@ -1,0 +1,15 @@
+# Calibration-stage fitting. The manuscript reports no optimiser settings for the
+# panel fit, so these are declared engineering defaults for the calibration stage
+# only; discovery time updates no parameter.
+learning_rate: 0.05
+weight_decay: 0.0
+epochs: 400
+batch_size: 5
+grad_accum: 1
+warmup_fraction: 0.1
+scheduler: cosine
+min_learning_rate: 0.00001
+grad_clip_norm: 1.0
+precision: fp32
+ema_decay: 0.0
+seed: 20260101

@@ -1,0 +1,9 @@
+name: ablation_no_knowledge_graph
+description: the knowledge-graph evidence is replaced by uncommitted mass
+data: evidence_sources
+model: belief_combination
+train: calibration_fit
+study: ablation
+ablation:
+  level: no-knowledge-graph
+  removed_modalities: [KG]

@@ -1,0 +1,24 @@
+# Belief combination of Sec. 4.1 and Algorithm 2, plus the retrieval bound.
+# max_hops and conflict_threshold are the Supplementary Table S1 planning values.
+max_hops: 3
+conflict_threshold: 0.05
+combination_order: reliability_ranking
+panel_dispersion: 0.16
+panel_seed: 20260101
+mass_map:
+  KG:
+    slope: 6.0
+    offset: -3.0
+    commitment: 0.88
+  DEP:
+    slope: 6.0
+    offset: -3.0
+    commitment: 0.92
+  FLUX:
+    slope: 6.0
+    offset: -3.0
+    commitment: 0.80
+  CLIN:
+    slope: 6.0
+    offset: -3.0
+    commitment: 0.72

@@ -1,0 +1,9 @@
+name: ablation_single_agent
+description: one evidence-producing agent reaches the status of a single modality
+data: evidence_sources
+model: belief_combination
+train: calibration_fit
+study: ablation
+ablation:
+  level: single-agent
+  single_modality: DEP

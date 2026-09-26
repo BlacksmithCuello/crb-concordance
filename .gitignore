@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.verify/
+.venv/
+venv/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+build/
+dist/
+# Anchored so the package directory src/crb_concordance/cohorts is never ignored.
+/data/
+/runs/
+/reports/
+/models/
+.coverage
+htmlcov/
+.DS_Store

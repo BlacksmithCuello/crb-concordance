@@ -1,0 +1,9 @@
+name: ablation_bayesian_log_odds
+description: Bayesian log-odds fusion retained as an index defined by ranks
+data: evidence_sources
+model: belief_combination
+train: calibration_fit
+study: ablation
+ablation:
+  level: full
+  rule: bayesian-log-odds

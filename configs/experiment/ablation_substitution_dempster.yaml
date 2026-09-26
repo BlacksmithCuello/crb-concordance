@@ -1,0 +1,9 @@
+name: ablation_substitution_dempster
+description: the combination rule is replaced by standard Dempster renormalisation
+data: evidence_sources
+model: belief_combination
+train: calibration_fit
+study: ablation
+ablation:
+  level: full
+  rule: dempster-renormalised

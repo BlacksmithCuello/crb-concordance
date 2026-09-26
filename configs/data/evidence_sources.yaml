@@ -1,0 +1,28 @@
+# Evidence sources of Sec. 4.3 and the clinical design of Sec. 4.6.
+# Every value is either taken from the manuscript or flagged as an engineering default.
+substrate_seed: 20260101
+n_background_genes: 72
+n_drugs: 24
+curation_cutoff: "2026-01-01"
+pre_cutoff_date: "2025-06-30"
+post_cutoff_date: "2026-05-31"
+cohort_size: 3300
+prospective_size: 825
+expression_genes: 48
+# Reduced-reconstruction medium: engineering default, the manuscript reports none.
+medium:
+  EX_glc_D_e: 10.0
+  EX_o2_e: 6.0
+  EX_gln_e: 2.0
+  EX_fa_e: 2.0
+  EX_carn_e: 5.0
+  EX_ser_e: 1.0
+public_series:
+  - GSE35452
+  - GSE45404
+  - GSE68204
+  - GSE119409
+  - GSE150082
+private_arms:
+  - retrospective
+  - prospective
