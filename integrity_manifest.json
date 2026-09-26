@@ -18,9 +18,9 @@
       "sha256": "83498bc2ccd03ad386cae52f539135f97e3e0ec16d7a8afb57373d583602d913"
     },
     {
-      "bytes": 11515,
+      "bytes": 11474,
       "path": "LICENSE",
-      "sha256": "3fb4502b1c7e9696f461b784ce5986b6d88ecfd7d574578cc33963cf55e24249"
+      "sha256": "756ddd45dd85f5ffc057d547deb71b3c9d7fdba4e433df1d07f3b687c7cf2b14"
     },
     {
       "bytes": 4276,
@@ -668,5 +668,5 @@
       "sha256": "6600826afb3af7790a19c16203884a6a830614eb8db3b9cc898bda18b25de63f"
     }
   ],
-  "manifest_digest": "dc56d41e50ee97c2841eaa9526d499d64e6fca206a969d8acc66a858c63b84bf"
+  "manifest_digest": "c08351b8246f288a49e08866e14165e7138fe18f6af330660cff0c3e6c37a386"
 }
